@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    private GameObject _projectile;
+    enum Tipe
+    {
+        Arrow1,
+        Arrow2,
+        Arrow3
+
+    }
     // Start is called before the first frame update
     void Start()
     {
