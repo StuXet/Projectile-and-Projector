@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour ,IProjectile
+public class Projectile : MonoBehaviour, IProjectile
 {
     [SerializeField] private GameObject _projectile;
     [SerializeField] private Transform _berolePosion;
