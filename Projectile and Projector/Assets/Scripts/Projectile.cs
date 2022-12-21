@@ -3,7 +3,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour, IProjectile
 {
     [SerializeField] private GameObject _projectile;
-    [SerializeField] private Transform _berolePosion;
+    [SerializeField] private Transform _barrelPosion;
     [SerializeField] private float _damageValue;
 
     Rigidbody _projRigidbody;
@@ -35,7 +35,7 @@ public class Projectile : MonoBehaviour, IProjectile
 
     public void shot(int force)
     {
-        Vector3 shotDirection = _berolePosion.position + (_berolePosion.forward * force);
+        Vector3 shotDirection = _barrelPosion.position + (_barrelPosion.forward * force);
         _projRigidbody.AddForce(shotDirection, ForceMode.Impulse);
     }
 
