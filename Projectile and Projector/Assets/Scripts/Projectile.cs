@@ -4,8 +4,11 @@ public class Projectile : MonoBehaviour, IProjectile
 {
     [SerializeField] private GameObject _projectile;
     [SerializeField] private Transform _berolePosion;
+    [SerializeField] private float _damageValue;
 
     Rigidbody _projRigidbody;
+
+
     enum Tipe
     {
 
@@ -20,5 +23,10 @@ public class Projectile : MonoBehaviour, IProjectile
     {
         Vector3 shotDirection = _berolePosion.position + (_berolePosion.forward * force);
         _projRigidbody.AddForce(shotDirection, ForceMode.Impulse);
+    }
+
+    public float GetDamageValue()
+    {
+        return _damageValue;
     }
 }
