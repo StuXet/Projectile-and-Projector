@@ -9,6 +9,7 @@ public class Controller : MonoBehaviour
     public float minTurnAngle = -90.0f;
     public float maxTurnAngle = 0.0f;
     private float rotX;
+    [SerializeField]IProjectile projectile;
 
     void Start()
     {
@@ -24,5 +25,10 @@ public class Controller : MonoBehaviour
         rotX = Mathf.Clamp(rotX, minTurnAngle, maxTurnAngle);
         // rotate the camera
         transform.eulerAngles = new Vector3(-rotX, transform.eulerAngles.y + y, 0);
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            projectile.shot(100);
+        }
     }
 }
