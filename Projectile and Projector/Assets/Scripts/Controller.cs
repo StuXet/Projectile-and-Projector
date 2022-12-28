@@ -9,7 +9,10 @@ public class Controller : MonoBehaviour
     public float minTurnAngle = -90.0f;
     public float maxTurnAngle = 0.0f;
     private float rotX;
-    [SerializeField]IProjectile projectile;
+    [SerializeField] private float force;
+    [SerializeField] private Transform loadPositin;
+    [SerializeField] private GameObject projectile;
+    
 
     void Start()
     {
@@ -28,7 +31,8 @@ public class Controller : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            projectile.shot(100);
+            projectile.GetComponent<IProjectile>().shot(force);
         }
     }
+
 }

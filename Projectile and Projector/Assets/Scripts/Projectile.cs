@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour, IProjectile
 {
-    [SerializeField] private GameObject _projectile;
-    [SerializeField] private Transform _barrelPosion;
     [SerializeField] private float _damageValue;
 
-    Rigidbody _projRigidbody;
+    [SerializeField] Rigidbody _projRigidbody;
 
 
     enum TrgetTipe
@@ -15,9 +13,11 @@ public class Projectile : MonoBehaviour, IProjectile
         Environment
     }
     // Start is called before the first frame update
+
     void Start()
     {
-        _projRigidbody = _projectile.GetComponent<Rigidbody>();
+        _projRigidbody = gameObject.GetComponent<Rigidbody>();
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -33,9 +33,10 @@ public class Projectile : MonoBehaviour, IProjectile
     }
 
 
-    public void shot(int force)
+    public void shot(float force)
     {
-        Vector3 shotDirection = _barrelPosion.position + (_barrelPosion.forward * force);
+        Vector3 shotDirection =  (transform.forward * force);
+        _projRigidbody.isKinematic = false;
         _projRigidbody.AddForce(shotDirection, ForceMode.Impulse);
     }
 

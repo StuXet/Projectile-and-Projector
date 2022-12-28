@@ -1,5 +1,6 @@
-﻿public interface IProjectile
+﻿using UnityEngine;
+public interface IProjectile
 {
-    public void shot(int force);
+    public void shot(float force);
     float GetDamageValue();
 }
