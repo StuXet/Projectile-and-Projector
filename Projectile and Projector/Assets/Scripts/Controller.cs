@@ -9,10 +9,14 @@ public class Controller : MonoBehaviour
     public float minTurnAngle = -90.0f;
     public float maxTurnAngle = 0.0f;
     private float rotX;
+<<<<<<< Updated upstream
     [SerializeField] private float force;
     [SerializeField] private Transform loadPositin;
     [SerializeField] private GameObject projectile;
     
+=======
+    [SerializeField] IProjectile projectile;
+>>>>>>> Stashed changes
 
     void Start()
     {

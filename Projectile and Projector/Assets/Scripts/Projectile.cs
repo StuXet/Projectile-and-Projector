@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour, IProjectile
 {
+<<<<<<< Updated upstream
+=======
+    
+    [SerializeField] private GameObject _projectile;
+    [SerializeField] private Transform _barrelPosion;
+>>>>>>> Stashed changes
     [SerializeField] private float _damageValue;
 
     [SerializeField] Rigidbody _projRigidbody;
